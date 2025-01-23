@@ -1,7 +1,0 @@
-export const CHAT_HISTORY = 'CHAT_HISTORY';
-
-export enum ChatActionType {
-  ADD_CHAT = 'ADD_CHAT',
-  DELETE_CHAT = 'DELETE_CHAT',
-  DELETE_CONTACT_CHATS = 'DELETE_CONTACT_CHATS',
-}
