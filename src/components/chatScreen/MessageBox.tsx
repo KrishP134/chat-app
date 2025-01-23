@@ -1,8 +1,8 @@
-import { MessageBody } from "./MessageBody";
-import { ProfileCard } from "../ProfileCard";
+import { MessageBody } from './MessageBody';
+import { ProfileCard } from '../ProfileCard';
 
-import type { Contact } from "../../constant/contacts";
-import { Chat } from "../../types/type";
+import type { Contact } from '../../constant/contacts';
+import { Chat } from '../../types/type';
 
 interface MessageBoxProps {
   selectedUser: Contact;
@@ -11,12 +11,7 @@ interface MessageBoxProps {
   className?: string;
 }
 
-export const MessageBox = ({
-  selectedUser,
-  getContactChat,
-  addChat,
-  className,
-}: MessageBoxProps): JSX.Element => {
+export const MessageBox = ({ selectedUser, getContactChat, addChat, className }: MessageBoxProps): JSX.Element => {
   const selectedUserId = selectedUser.id;
 
   return (

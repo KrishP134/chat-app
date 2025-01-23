@@ -1,6 +1,6 @@
-import { ChangeEvent, KeyboardEvent, useCallback, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react';
 
-import { Button } from "./Button";
+import { Button } from './Button';
 
 interface SendBoxProps {
   selectedUserId: string;
@@ -8,12 +8,8 @@ interface SendBoxProps {
   className?: string;
 }
 
-export const SendBox = ({
-  selectedUserId,
-  onSend,
-  className,
-}: SendBoxProps): JSX.Element => {
-  const [message, setMessage] = useState("");
+export const SendBox = ({ selectedUserId, onSend, className }: SendBoxProps): JSX.Element => {
+  const [message, setMessage] = useState('');
 
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>): void => {
     setMessage(e.target.value);
@@ -21,14 +17,13 @@ export const SendBox = ({
 
   const handleSend = useCallback(() => {
     if (message.length === 0) return;
-
     onSend(selectedUserId, message);
-    setMessage("");
+    setMessage('');
   }, [message, onSend, selectedUserId]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>): void => {
-      if (e.key === "Enter") {
+      if (e.key === 'Enter') {
         handleSend();
       }
     },

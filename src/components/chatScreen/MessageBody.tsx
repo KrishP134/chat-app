@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { ChatBox } from "./ChatDisplay/ChatBox";
-import { SendBox } from "./SendBox/SendBox";
+import { ChatBox } from './ChatDisplay/ChatBox';
+import { SendBox } from './SendBox/SendBox';
 
-import type { Chat } from "../../types/type";
+import type { Chat } from '../../types/type';
 
 interface MessageBodyProps {
   selectedUserId: string;
@@ -12,18 +12,11 @@ interface MessageBodyProps {
   className?: string;
 }
 
-export const MessageBody = ({
-  selectedUserId,
-  getContactChat,
-  addChat,
-  className,
-}: MessageBodyProps): JSX.Element => {
+export const MessageBody = ({ selectedUserId, getContactChat, addChat, className }: MessageBodyProps): JSX.Element => {
   const currentUserChatHistory = getContactChat(selectedUserId);
 
   return (
-    <div
-      className={`w-full h-full px-16 py-8 flex flex-col gap-4 ${className}`}
-    >
+    <div className={`w-full h-full px-16  flex flex-col gap-4 ${className}`}>
       <div className="flex-1">
         <ChatBox chats={currentUserChatHistory} />
       </div>

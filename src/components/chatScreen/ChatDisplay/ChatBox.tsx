@@ -1,5 +1,5 @@
-import { Message } from "./Message";
-import type { Chat } from "../../../types/type";
+import { Message } from './Message';
+import type { Chat } from '../../../types/type';
 
 interface ChatBoxProps {
   chats: Chat[];
@@ -7,6 +7,10 @@ interface ChatBoxProps {
 }
 
 export const ChatBox = ({ chats }: ChatBoxProps): JSX.Element => {
+  const handleContextMenu = e => {
+    e.preventDefault();
+  };
+
   if (chats === undefined || chats.length === 0) {
     return (
       <div className="flex justify-center items-center h-full">
@@ -17,10 +21,10 @@ export const ChatBox = ({ chats }: ChatBoxProps): JSX.Element => {
 
   return (
     <ul className="w-full h-full flex flex-col justify-end gap-4 ">
-      {chats.map((chat) => {
+      {chats.map(chat => {
         return (
           <li key={chat.id} className="flex justify-end">
-            <Message chat={chat}></Message>
+            <Message onContextMenu={handleContextMenu} chat={chat}></Message>
           </li>
         );
       })}

@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -9,7 +9,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({
   text,
   onClick,
-  className = "",
+  className = '',
+  onMouseEnter,
+  onMouseLeave,
   ...rest
 }: ButtonProps): JSX.Element => {
   return (

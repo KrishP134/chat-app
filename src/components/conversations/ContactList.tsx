@@ -1,23 +1,15 @@
-import { StatefulTooltip } from "baseui/tooltip";
+import { Contact } from './Contact';
 
-import { Contact } from "./Contact";
-
-import type { Contact as ContactType } from "../../constant/contacts";
-import { Button } from "../chatScreen/SendBox/Button";
+import type { Contact as ContactType } from '../../constant/contacts';
+import type { OnContactAction } from '../../hooks/useContactList/types';
 
 interface ContactListProps {
   contacts: ContactType[];
-  onContactSelect: (id: string) => void;
-  onContactDelete: (id: string) => void;
+  onContactAction: OnContactAction;
   className?: string;
 }
 
-export const ContactList = ({
-  contacts,
-  onContactSelect,
-  onContactDelete,
-  className,
-}: ContactListProps): JSX.Element => {
+export const ContactList = ({ contacts, onContactAction, className }: ContactListProps): JSX.Element => {
   if (!contacts || contacts.length === 0) {
     return (
       <div className={`flex justify-center items-center ${className}`}>
@@ -31,7 +23,7 @@ export const ContactList = ({
       {contacts.map((contact: ContactType): JSX.Element => {
         return (
           <li key={contact.id} data-index={contact.id}>
-            <Contact contact={contact} onUserChange={onContactSelect} />
+            <Contact contact={contact} onContactAction={onContactAction} />
           </li>
         );
       })}
