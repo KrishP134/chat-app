@@ -1,9 +1,11 @@
+// Components
 import { ProfileCard } from '../ProfileCard';
-
-import type { Contact } from '../../../../types';
 import { StartConversation } from './components/StartConversation';
-import { OnContactAction } from '../../hooks/useContactList/types';
 import { ContactListContainer } from './components/ContactList/ContactListContainer';
+
+// Types
+import type { Contact } from '../../../../types';
+import type { OnContactAction } from '../../hooks/useContactList/types';
 
 const loggedInUser = {
   name: 'Krish Prajapati',

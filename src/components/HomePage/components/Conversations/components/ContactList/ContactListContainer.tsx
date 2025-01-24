@@ -13,9 +13,9 @@ type ContactListContainerProps = {
 
 export const ContactListContainer = ({ contacts, onContactAction }: ContactListContainerProps): JSX.Element => {
   return (
-    <div>
+    <div className="w-full h-full overflow-y-scroll">
       {contacts?.length ? (
-        <ContactList className="flex-1" contacts={contacts} onContactAction={onContactAction} />
+        <ContactList contacts={contacts} onContactAction={onContactAction} />
       ) : (
         <ContactListPlaceHolder />
       )}

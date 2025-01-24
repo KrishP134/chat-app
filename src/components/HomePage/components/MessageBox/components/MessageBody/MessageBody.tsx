@@ -1,7 +1,9 @@
+// Hooks
+import { useChatActions } from '../../../../hooks/useChatActions';
+
+// Components
 import { ChatBoxContainer } from './components/ChatBox';
 import { SendBox } from './components/SendBox/SendBox';
-
-import { useChatActions } from '../../../../hooks/useChatActions';
 
 interface MessageBodyProps {
   selectedContactId: string;

@@ -9,7 +9,7 @@ type TooltipProps = {
 
 export const Tooltip = ({ children, TooltipContent }: TooltipProps): JSX.Element => {
   return (
-    <StatefulTooltip content={() => <TooltipContent />} returnFocus autoFocus>
+    <StatefulTooltip content={() => <TooltipContent />} returnFocus autoFocus showArrow>
       {children}
     </StatefulTooltip>
   );

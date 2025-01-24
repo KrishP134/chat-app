@@ -13,7 +13,7 @@ interface ContactListProps {
 
 export const ContactList = ({ contacts, onContactAction, className = '' }: ContactListProps): JSX.Element => {
   return (
-    <ul className={`overflow-y-scroll ${className}`}>
+    <ul className={`w-full h-full  ${className}`}>
       {contacts.map((contact: ContactType): JSX.Element => {
         return (
           <li key={contact.id} data-index={contact.id}>

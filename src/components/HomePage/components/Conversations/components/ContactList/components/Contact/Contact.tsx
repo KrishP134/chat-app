@@ -1,8 +1,13 @@
 // Libraries
 import { useCallback } from 'react';
 
+// Utils or Helper
+import { deleteContactChatHistory } from './utils';
+
 // Components
+import { Tooltip } from '../../../../../Tooltip';
 import { ProfileCard } from '../../../../../ProfileCard';
+import { ContactTooltipContent } from './components/ContactTooltipContent';
 
 // Constants
 import { ContactActionType } from '../../../../../../hooks/useContactList/constants';
@@ -24,5 +29,21 @@ export const Contact = ({ contact, onContactAction }: ContactProps): JSX.Element
     });
   }, [contact.id, onContactAction]);
 
-  return <ProfileCard name={contact.name} profileImg={contact.profileImg} onClick={onProfileClick} />;
+  const onProfileDelete = useCallback(() => {
+    onContactAction({
+      type: ContactActionType.DELETE_CONTACT,
+      payload: {
+        id: contact.id,
+      },
+    });
+    deleteContactChatHistory({ id: contact.id });
+  }, [contact.id, onContactAction]);
+
+  return (
+    <Tooltip TooltipContent={() => <ContactTooltipContent handleDelete={onProfileDelete} />}>
+      <div>
+        <ProfileCard name={contact.name} profileImg={contact.profileImg} onClick={onProfileClick} />
+      </div>
+    </Tooltip>
+  );
 };

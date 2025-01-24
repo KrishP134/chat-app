@@ -1,6 +1,9 @@
+// Compoenents
 import { MessageBody } from './components/MessageBody/MessageBody';
 import { ProfileCard } from '../ProfileCard/ProfileCard';
-import { Contact } from '../../../../types';
+
+// Types
+import type { Contact } from '../../../../types';
 
 interface MessageBoxProps {
   selectedContact: Contact;

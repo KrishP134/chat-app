@@ -1,3 +1,7 @@
+// Constants
+const DEFAULT_PROFILE_IMAGE =
+  'https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg';
+
 interface ProfileCardProps {
   name: string;
   className?: string;
@@ -5,11 +9,8 @@ interface ProfileCardProps {
   onClick?: () => void;
 }
 
-const DEFAULT_PROFILE_IMAGE =
-  'https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg';
-
 export const ProfileCard = ({
-  className,
+  className = '',
   name,
   profileImg = DEFAULT_PROFILE_IMAGE,
   onClick,

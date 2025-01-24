@@ -1,6 +1,9 @@
-import { Contact } from '../../../../types';
+// Components
 import { MessageBox } from './MessageBox';
 import { MessageBoxPlaceholder } from './MessageBoxPlaceholder';
+
+// Types
+import type { Contact } from '../../../../types';
 
 type MessageBoxContainerProps = {
   selectedContact: Contact | undefined;

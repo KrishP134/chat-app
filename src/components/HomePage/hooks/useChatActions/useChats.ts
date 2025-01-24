@@ -1,3 +1,6 @@
+// Libraries
+import { useCallback } from 'react';
+
 // Hooks
 import { useLocalStorage } from '../useLocalStorage';
 
@@ -10,7 +13,6 @@ import { CHAT_HISTORY_KEY, ChatActionType } from './constants';
 // Types
 import type { Chat } from '../../../../types';
 import type { OnChatAction, UseChatActions } from './types';
-import { useCallback } from 'react';
 
 export const useChatActions = ({ id }: { id: string }): UseChatActions => {
   const [contactChats, setContactChats] = useLocalStorage<Chat[]>(`${CHAT_HISTORY_KEY}-${id}`, []);

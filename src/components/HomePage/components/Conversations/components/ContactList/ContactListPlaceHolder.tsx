@@ -4,7 +4,7 @@ type ContactListProps = {
 
 export const ContactListPlaceHolder = ({ className = '' }: ContactListProps) => {
   return (
-    <div className={`flex justify-center items-center ${className}`}>
+    <div className={`w-full h-full flex justify-center items-center ${className}`}>
       <p>No conversation yet.</p>
     </div>
   );

@@ -1,5 +1,5 @@
+// Components
 import { Button } from '../../../../../SendBox/Button';
-import { useToggle } from '../../hooks/useToggle/useToggle';
 
 type ChatTooltipContentProps = {
   handleDelete: () => void;
