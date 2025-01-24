@@ -1,0 +1,1 @@
+export { ChatTooltipContent } from './ChatTooltipContent';
